@@ -55,9 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ControlTemplateDemo.xaml.cs">
+      <DependentUpon>ControlTemplateDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBindingDemo.xaml.cs">
+      <DependentUpon>DataBindingDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window_layoutDemo.xaml.cs">
       <DependentUpon>Window_layoutDemo.xaml</DependentUpon>
     </Compile>
+    <Page Include="ControlTemplateDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataBindingDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

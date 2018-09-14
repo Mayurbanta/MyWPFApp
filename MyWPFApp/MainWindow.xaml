@@ -5,73 +5,111 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyWPFApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="800">
     <Window.Resources>
         <Style TargetType="Button" x:Key="BrownButton">
             <Setter Property="Background" Value="Chocolate"/>
         </Style>
+
+        <Style TargetType="Button" x:Key="EllipseButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="Red"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Window.Resources>
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-       
-        <Button Content="Button" FontWeight="Bold" Background="{StaticResource YellowBrush}"  Height="50" Width="150" Click="Button_Click" ></Button>
-        <Button Style="{StaticResource BrownButton}" Content="Button" FontWeight="Bold"   Height="50" Width="150"  ></Button>
-        <Button  Content="Property-Trigger Button" FontWeight="Bold"   Height="50" Width="150" >
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Foreground" Value="blue"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="Red"/>
-                            <Setter Property="FontWeight" Value="ExtraBold"/>
-                            <Setter Property="FontSize" Value="15"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-        
-        <CheckBox Name="chkbox" Content="Check Me" Margin="0,20,0,0"/>
-        <Button  Content="Data-Trigger Button" FontWeight="Bold"   Height="50" Width="150" Click="Button_Click" >
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Foreground" Value="blue"/>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding ElementName=chkbox, Path= IsChecked}" Value="True">
-                            <Setter Property="Foreground" Value="Red"/>
-                            <Setter Property="FontWeight" Value="ExtraBold"/>
-                            <Setter Property="FontSize" Value="15"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-        
-        <TextBlock Name="LblStyle" Text="I am Event Trigger" FontSize="18">
-            <TextBlock.Style>
-                <Style TargetType="TextBlock">
-                    <Style.Triggers>
-                        <EventTrigger RoutedEvent="MouseEnter">
-                            <EventTrigger.Actions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="30"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger.Actions>
-                        </EventTrigger>
-                        
-                        <EventTrigger RoutedEvent="MouseLeave">
-                            <EventTrigger.Actions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="18"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger.Actions>
-                        </EventTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="15"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+
+            <Button Content="Regular Button" FontWeight="Bold"  Background="{StaticResource YellowBrush}"  Height="50" Width="150" Click="Button_Click" ></Button>
+            <Button Style="{StaticResource BrownButton}" Content="Button with Static resource" FontWeight="Bold"   Height="50" Width="180" Margin="0,20" ></Button>
+            <Button  Content="Property-Trigger Button" FontWeight="Bold"   Height="50" Width="150" Margin="0,20" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Foreground" Value="blue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Red"/>
+                                <Setter Property="FontWeight" Value="ExtraBold"/>
+                                <Setter Property="FontSize" Value="15"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <CheckBox Name="chkbox" Content="Check Me" Margin="0,20,0,0" HorizontalAlignment="Center" />
+            <Button  Content="Data-Trigger Button" FontWeight="Bold"   Height="50" Width="150" Click="Button_Click" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Foreground" Value="blue"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=chkbox, Path= IsChecked}" Value="True">
+                                <Setter Property="Foreground" Value="Red"/>
+                                <Setter Property="FontWeight" Value="ExtraBold"/>
+                                <Setter Property="FontSize" Value="15"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <TextBlock Name="LblStyle" Text="I am Event Trigger" FontSize="18" Margin="0,20">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="30"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="18"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <Button Name="btnDataBinding" Content="Open Data Binding form" Height="50" Width="225" FontSize="18" Margin="20" FontWeight="Bold" Click="btnDataBinding_Click">
+
+            </Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
+            <Button Style="{StaticResource EllipseButton}" Content="I am a button" Height="60" Width="160" Click="Button_Click_1" FontWeight="ExtraBold">
+
+            </Button>
+        </StackPanel>
+    </Grid>
 </Window>
