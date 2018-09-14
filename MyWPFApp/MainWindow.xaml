@@ -107,9 +107,12 @@
             </Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2">
-            <Button Style="{StaticResource EllipseButton}" Content="I am a button" Height="60" Width="160" Click="Button_Click_1" FontWeight="ExtraBold">
+            <Button Style="{StaticResource EllipseButton}" Content="I am a button" Height="60" Width="160" Click="Button_Click_1" FontWeight="ExtraBold"/>
 
-            </Button>
+
+            <Button Name="btnDataContextDemo" Content="Data Context Demo" FontWeight="Bold"  
+                    Background="{StaticResource YellowBrush}"  Height="50" Width="150" Margin="20" Click="btnDataContextDemo_Click" />
+            
         </StackPanel>
     </Grid>
 </Window>

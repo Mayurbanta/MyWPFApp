@@ -28,7 +28,14 @@ namespace MyWPFApp
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("I am Ellipse button");
+            MessageBox.Show("I'm an Ellipse button");
+        }
+
+        private void btnDataContextDemo_Click(object sender, RoutedEventArgs e)
+        {
+            DataContextDemo dataContextDemo = new DataContextDemo();
+            dataContextDemo.Show();
+            this.Close();
         }
     }
 }
