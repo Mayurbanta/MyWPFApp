@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPFDispatcherDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDispatcherDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Name="myTextBlock" Text="Initial Text" FontSize="20" Margin="20" TextAlignment="Center"></TextBlock>
+            <Button Content="Enter" Name="myButton" Height="50" Width="150" Click="myButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
