@@ -113,6 +113,9 @@
             <Button Name="btnDataContextDemo" Content="Data Context Demo" FontWeight="Bold"  
                     Background="{StaticResource YellowBrush}"  Height="50" Width="150" Margin="20" Click="btnDataContextDemo_Click" />
             
+            <Button Name="btnFirstWPFform" Content="1st WPF Form" FontWeight="Bold"  
+                    Background="{StaticResource YellowBrush}"  Height="50" Width="150" Margin="20" Click="btnFirstWPFform_Click" />
+            
         </StackPanel>
     </Grid>
 </Window>

@@ -37,5 +37,12 @@ namespace MyWPFApp
             dataContextDemo.Show();
             this.Close();
         }
+
+        private void btnFirstWPFform_Click(object sender, RoutedEventArgs e)
+        {
+            FirstWPFform firstWPFform = new FirstWPFform();
+            firstWPFform.Show();
+            this.Close();
+        }
     }
 }

@@ -61,6 +61,9 @@
     <Compile Include="DataContextDemo.xaml.cs">
       <DependentUpon>DataContextDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FirstWPFform.xaml.cs">
+      <DependentUpon>FirstWPFform.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window_layoutDemo.xaml.cs">
       <DependentUpon>Window_layoutDemo.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataContextDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FirstWPFform.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
