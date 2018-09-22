@@ -93,7 +93,7 @@
             <TextBlock Text="Additional Info"  FontWeight="Bold" Margin="0 10 0 0 "/>
             <TextBox  x:Name="txtAdditionalInfo" Height="100" Background="Beige" Padding="2"/>
 
-            <Button Content="Back to Main form"  Margin="200 50 0 0" Click="Button_Click"/>
+            <Button Content="Back to Main form" Width="150" HorizontalAlignment="Right" Margin="0 10 0 0" Click="Button_Click"/>
 
         </StackPanel>
     </Border>

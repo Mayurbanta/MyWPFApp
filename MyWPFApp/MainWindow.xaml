@@ -115,7 +115,10 @@
             
             <Button Name="btnFirstWPFform" Content="1st WPF Form" FontWeight="Bold"  
                     Background="{StaticResource YellowBrush}"  Height="50" Width="150" Margin="20" Click="btnFirstWPFform_Click" />
-            
+
+            <Button Name="btnRoutedEvents" Content="Routed Events" FontWeight="Bold"  
+                    Background="{StaticResource YellowBrush}"  Height="50" Width="150" Margin="20" Click="btnRoutedEvents_Click"/>
+
         </StackPanel>
     </Grid>
 </Window>

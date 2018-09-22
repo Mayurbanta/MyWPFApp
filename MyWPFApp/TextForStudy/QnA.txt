@@ -1,0 +1,51 @@
+﻿Q: What is Data Template?
+Ans: If the content of the control is object (which is a complex data type), then we have to use data-template inside that control to get the property from that object.
+	Example:
+		<Label content="{Binding obj}">
+			<Label.ContentTemplate>
+				<DataTemplate>
+					<Label Content="{Binding Name}"/>  //"Name" is the property of obj 
+				</DataTemplate>
+			</Label.ContentTemplate>
+		</label>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What is Control template?
+Ans: Every control has default template for look & feel etc., this can be overwritten by user using Control Template.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What is Content Presenter?
+Ans: In Winforms, button has only text. But in WPF, button can have complex type as its content (not just text like images inside grid etc.).
+	 So Conent presenter is used to display this complex content inside the control.
+	 Example: <ContentPresenter/>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What are routed events in WPF?
+Ans: Events are fired for all the controls which resides inside a control.
+	There are 3 types of routed events.
+		1. Direct Events - These are regular events like WinForm Events.
+		2. Bubbling Events - First event of inner control is fired and then event of outer control is fired. 
+			Example: Button within a button - First Click of inner button is fired then Click of outer button is fired.
+		3. Tunneling Events - First event of Outer control is fired and then event of Inner control is fired. 
+			Events with Prefix of "preview" in a control works with tunneling events. 
+			Example: Button within a button - First Click of Outer button is fired then Click of Inner button is fired.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What is INotifyPropertyChanged?
+Ans: Purpose of INotifyPropertyChanged is to implement an Event which notify the UI that something has changed.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What are Commands in WPF?
+Ans: Commands in WPF are basically loosely typed events. 
+	e.g.: In button click XAML, mention command and then method in that command is written in View-Model(VM).
+		  Real time expample is printing document. it can be done in multiple ways like Cntrl + P or Print button or right-click print document. behind all these we can write 
+		  command which would call same method in VM. 
+
+		  *Write a class "Command" implementing ICommand, having 2 methods and 1 event: CanExecute(), Execute(), event CanExecuteChanged.
+		  *Write View-Model, call this "Command" class as property in View-Model. In View, mention command in control.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What is Observable collection?
+Ans: 
+

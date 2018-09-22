@@ -44,5 +44,12 @@ namespace MyWPFApp
             firstWPFform.Show();
             this.Close();
         }
+
+        private void btnRoutedEvents_Click(object sender, RoutedEventArgs e)
+        {
+            MyRoutedEvents myRoutedEvents = new MyRoutedEvents();
+            myRoutedEvents.Show();
+            this.Close();
+        }
     }
 }

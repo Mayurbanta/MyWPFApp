@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{73C44634-B90A-4852-9754-E4A141474F8A}</ProjectGuid>
+    <ProjectGuid>{1E1C88B5-B684-4F1B-9626-968E163E0F21}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MyWPFApp</RootNamespace>
-    <AssemblyName>MyWPFApp</AssemblyName>
+    <RootNamespace>MVVMPractice</RootNamespace>
+    <AssemblyName>MVVMPractice</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,34 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataBindingDemo.xaml.cs">
-      <DependentUpon>DataBindingDemo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DataContextDemo.xaml.cs">
-      <DependentUpon>DataContextDemo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FirstWPFform.xaml.cs">
-      <DependentUpon>FirstWPFform.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MyRoutedEvents.xaml.cs">
-      <DependentUpon>MyRoutedEvents.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Window_layoutDemo.xaml.cs">
-      <DependentUpon>Window_layoutDemo.xaml</DependentUpon>
-    </Compile>
-    <Page Include="DataBindingDemo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DataContextDemo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="FirstWPFform.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="ViewModel\PersonViewModel.cs" />
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -90,20 +65,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MyRoutedEvents.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Window_layoutDemo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -129,8 +97,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="TextForStudy\QnA.txt" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
