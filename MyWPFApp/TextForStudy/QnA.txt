@@ -47,5 +47,42 @@ Ans: Commands in WPF are basically loosely typed events.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q: What is Observable collection?
-Ans: 
+Ans: If you are binding a collection (like List) to a control then it does not have InotifyPropertyChanged event. When any collection is made as Observable collection then 
+	"Collection Changed" event is automatically added to it.
+	e.g. - this._people = new ObservableCollection<Person>();
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What are Value Converters in WPF?
+Ans: IValueConverter has two method, Convert and ConvertBack.
+	 Example: Data in Model needs to be displayed as something else in View, like boolean property in Model needs to be displayed as Yes/No in View.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What is IDataErrorInfo Interface in WPF?
+Ans: IDataErrorInfo is used for validation.
+	 Depending on the condition, we can fire error messages, tooltips, messages etc. using IDataErrorInfo interface.
+	 IDataErrorInfo Interface is implemented in Model and then in XAMl, style for "validation error" is created and bound to the control.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: what are Dependency Properties in WPF?
+Ans: Dependency Properties are CLR property with additional features which are used in controls for XAML.
+     e.g. button has background property, and bacground has dependency property called backgroundproperty which gets called in setter of background property.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q: What are Attached Properties in WPF?
+Ans: It is special type of dependency property. Attached property is property of one control applied to another control.
+	 e.g.  <StackPanel Grid.Column="1" >, grid.column is attached property. 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
