@@ -15,28 +15,13 @@ using System.Windows.Shapes;
 namespace MyWPFApp
 {
     /// <summary>
-    /// Interaction logic for MyRoutedEvents.xaml
+    /// Interaction logic for CustomDependencyProp.xaml
     /// </summary>
-    public partial class MyRoutedEvents : Window
+    public partial class CustomDependencyProp : Window
     {
-        public MyRoutedEvents()
+        public CustomDependencyProp()
         {
             InitializeComponent();
-        }
-
-        private void btnClickMe_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("I am outer button!");
-        }
-
-        private void OuterEllipse_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("I am Green Ellipse!");
-        }
-
-        private void InnButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("I am inner button!");
         }
 
         private void BacktoMainWindow_Click(object sender, RoutedEventArgs e)

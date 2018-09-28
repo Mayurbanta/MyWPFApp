@@ -51,5 +51,12 @@ namespace MyWPFApp
             myRoutedEvents.Show();
             this.Close();
         }
+
+        private void btnCustomDepProp_Click(object sender, RoutedEventArgs e)
+        {
+            CustomDependencyProp customDependencyProp = new CustomDependencyProp();
+            customDependencyProp.Show();
+            this.Close();
+        }
     }
 }
