@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MyWPFApp</RootNamespace>
     <AssemblyName>MyWPFApp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,6 +58,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ComboBoxesView.xaml.cs">
+      <DependentUpon>ComboBoxesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBoxesViewModel.cs" />
+    <Compile Include="Converters\BooleanToColorConverter.cs" />
+    <Compile Include="Converters\YesNoToBooleanConverter.cs" />
     <Compile Include="CustomDependencyProp.xaml.cs">
       <DependentUpon>CustomDependencyProp.xaml</DependentUpon>
     </Compile>
@@ -66,8 +73,18 @@
     <Compile Include="DataContextDemo.xaml.cs">
       <DependentUpon>DataContextDemo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataTemplateWindow.xaml.cs">
+      <DependentUpon>DataTemplateWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FirstWPFform.xaml.cs">
       <DependentUpon>FirstWPFform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IDataErrorInfoViewModel.cs" />
+    <Compile Include="IDataErrorInfoWindow.xaml.cs">
+      <DependentUpon>IDataErrorInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow2.xaml.cs">
+      <DependentUpon>MainWindow2.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyRoutedEvents.xaml.cs">
       <DependentUpon>MyRoutedEvents.xaml</DependentUpon>
@@ -75,6 +92,10 @@
     <Compile Include="Window_layoutDemo.xaml.cs">
       <DependentUpon>Window_layoutDemo.xaml</DependentUpon>
     </Compile>
+    <Page Include="ComboBoxesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomDependencyProp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,7 +108,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DataTemplateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FirstWPFform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IDataErrorInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,7 +132,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindow2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyRoutedEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceDictionaries\ButtonDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,6 +183,16 @@
       <Project>{e78ca0a6-cb9b-40a4-aef4-9d21d252e556}</Project>
       <Name>WpfControlLibrary1</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WPFResources\WPFResources.csproj">
+      <Project>{e10894fa-f8e1-464e-b90d-9b21af43c747}</Project>
+      <Name>WPFResources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\BlueBall.PNG" />
+    <Resource Include="Images\GreenBall.PNG" />
+    <Resource Include="Images\RedBall.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

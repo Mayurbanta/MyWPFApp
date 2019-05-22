@@ -28,7 +28,7 @@ namespace MyWPFApp
         {
             MessageBox.Show("I am outer button!");
         }
-
+        
         private void OuterEllipse_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("I am Green Ellipse!");

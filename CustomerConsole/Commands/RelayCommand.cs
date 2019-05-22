@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace MVVMPractice.Command
+namespace CustomerConsole.Commands
 {
-    class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         Action<object> executeAction;
         Func<object, bool> canExecute;
@@ -44,19 +44,5 @@ namespace MVVMPractice.Command
                 CommandManager.RequerySuggested -= value;
             }
         }
-        
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
